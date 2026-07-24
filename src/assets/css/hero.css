@@ -1,0 +1,121 @@
+/* Hero */
+.hero{
+    background: url("../img/fundo.png") center center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    perspective: 1000px;
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+}
+.info-hero, .secundary{
+    position: absolute;
+    padding-left: 4rem;
+    
+}
+.info-hero .sub-topico, .secundary .sub-topico{
+    font-size: clamp(0.7rem, 1vw, 1.2rem);
+    letter-spacing: 1px;
+    font-family: var(--font-inter);
+    color: rgb(252, 226, 188);
+    margin-bottom: 1rem;
+}
+.info-hero h1, .secundary h1{
+    font-size: clamp(2rem, 6vw, 6rem);
+    color: aliceblue;
+    font-weight: 100;
+}
+.info-hero .descricao, .secundary .descricao{
+    font-family: var(--font-Mont);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgb(172, 172, 172);
+    letter-spacing: 0.5px;
+    line-height: 26px;
+    margin-bottom: 3rem;
+}
+.btn-hero{
+    display: flex;
+    gap: 2rem;
+}
+.btn-hero .btn-agendar, .btn-hero .btn-agenda{
+    padding: 15px 40px;
+    border: none;
+    background-color: rgb(252, 226, 188);
+    border: 1px solid rgb(252, 226, 188);
+    border-radius: 2px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.btn-hero .btn-agendar:hover, .btn-hero .btn-agenda:hover{
+    background-color: transparent;
+    color: #fff;
+}
+.btn-hero .btn-port, .btn-hero .btn-explorar{
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 1px solid rgb(252, 226, 188);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+    z-index: 2;
+}
+.btn-hero .btn-explorar::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(252, 226, 188);
+    width: 0;
+    height: 100%;
+    transition: 0.5s;
+    z-index: -1;
+}
+.btn-hero .btn-explorar:hover::before{
+    width: 100%;
+}
+
+.btn-explorar:hover{
+    color: #000;
+}
+@media screen and (max-width: 930px){
+
+    .info-hero {
+        padding-left: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .info-hero h1{
+        text-align: center;
+    }
+    .info-hero .sub-topico{
+        text-align: center;
+    }
+    .info-hero .descricao{
+        text-align: center;
+    }
+    .btn-hero{
+        justify-content: center;
+    }
+    .btn-hero .btn-agendar, .btn-hero .btn-port{
+        padding: 15px 20px;
+    }
+    .info-hero .descricao{
+        line-height: 15px;
+    }
+}
+@media screen and (max-width: 350px){
+    .btn-hero{
+        flex-direction: column;
+        margin: 0 50px;
+    }
+}
+.secundary{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
