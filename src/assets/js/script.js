@@ -53,7 +53,7 @@ gsap.from(header, {
     y: -100
 })
 const hero = document.querySelector(".info-hero")
-
+const site = document.querySelector(".site")
 const time = gsap.timeline({
     scrollTrigger: {
         trigger: ".hero",
@@ -79,7 +79,11 @@ time.to(hero, {
     pointerEvents: "auto",
     visibility: "visible"
 }, 1.5)
-
+.from(site, {
+    y: 7200,
+    duration: 6,
+    ease: "power2.out"
+}, 2)
 
 
 

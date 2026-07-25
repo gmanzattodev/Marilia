@@ -1,21 +1,26 @@
 /* Hero */
+.main{
+    width: 100%;
+    position: relative;
+}
 .hero{
     background: url("../img/fundo.png") center center no-repeat;
     background-size: cover;
     min-height: 100vh;
     display: flex;
+    width: 100%;
     justify-content: start;
     align-items: center;
     position: relative;
     perspective: 1000px;
-    pointer-events: auto;
-    opacity: 1;
-    visibility: visible;
+    
 }
-.info-hero, .secundary{
+.info-hero{
     position: absolute;
     padding-left: 4rem;
-    
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }
 .info-hero .sub-topico, .secundary .sub-topico{
     font-size: clamp(0.7rem, 1vw, 1.2rem);
@@ -41,7 +46,7 @@
     display: flex;
     gap: 2rem;
 }
-.btn-hero .btn-agendar, .btn-hero .btn-agenda{
+.btn-hero .btn-agendar{
     padding: 15px 40px;
     border: none;
     background-color: rgb(252, 226, 188);
@@ -50,11 +55,11 @@
     transition: 0.5s;
     cursor: pointer;
 }
-.btn-hero .btn-agendar:hover, .btn-hero .btn-agenda:hover{
+.btn-hero .btn-agendar:hover{
     background-color: transparent;
     color: #fff;
 }
-.btn-hero .btn-port, .btn-hero .btn-explorar{
+.btn-hero .btn-port{
     padding: 15px 40px;
     background-color: transparent;
     border: 1px solid rgb(252, 226, 188);
@@ -64,7 +69,7 @@
     position: relative;
     z-index: 2;
 }
-.btn-hero .btn-explorar::before{
+.btn-hero .btn-port::before{
     content: "";
     position: absolute;
     top: 0;
@@ -75,11 +80,11 @@
     transition: 0.5s;
     z-index: -1;
 }
-.btn-hero .btn-explorar:hover::before{
+.btn-hero .btn-port:hover::before{
     width: 100%;
 }
 
-.btn-explorar:hover{
+.btn-port:hover{
     color: #000;
 }
 @media screen and (max-width: 930px){
@@ -118,4 +123,5 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+    padding-left: 4rem;
 }
