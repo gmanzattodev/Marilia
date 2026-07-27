@@ -7,6 +7,10 @@
   padding: 0 60px;
   position: fixed;
   z-index: 999;
+  transition: 0.5s;
+}
+.block{
+  background-color: rgb(15, 15, 15);
 }
 
 .logo-header img {
@@ -38,14 +42,14 @@
   height: 1px;
   width: 0;
   transition: 0.3s;
-  background-color: #241d16;
+  background-color: var(--text-color-orange);
 }
 .menu > ul > li > a:hover::after {
   width: 100%;
 }
 
 .menu a:hover {
-  color: #241d16;
+  color: var(--text-color-orange);
 }
 
 .submenu {

@@ -1,127 +1,79 @@
-/* Hero */
-.main{
-    width: 100%;
-    position: relative;
+.hero {
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.795), transparent),
+    url("../img/fundo.png") center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
-.hero{
-    background: url("../img/fundo.png") center center no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    width: 100%;
-    justify-content: start;
-    align-items: center;
-    position: relative;
-    perspective: 1000px;
-    
+.info-hero {
+  padding-left: 4rem;
 }
-.info-hero{
-    position: absolute;
-    padding-left: 4rem;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
+.info-hero h3 {
+  font-family: var(--font-league);
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 1rem;
 }
-.info-hero .sub-topico, .secundary .sub-topico{
-    font-size: clamp(0.7rem, 1vw, 1.2rem);
-    letter-spacing: 1px;
-    font-family: var(--font-inter);
-    color: rgb(252, 226, 188);
-    margin-bottom: 1rem;
+.info-hero h1 {
+  font-size: clamp(1rem, 6vw, 5rem);
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
-.info-hero h1, .secundary h1{
-    font-size: clamp(2rem, 6vw, 6rem);
-    color: aliceblue;
-    font-weight: 100;
+.info-hero p {
+  color: rgb(202, 202, 202);
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  letter-spacing: 0.5px;
+  font-family: var(--font-inter);
+  margin-bottom: 3rem;
 }
-.info-hero .descricao, .secundary .descricao{
-    font-family: var(--font-Mont);
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    color: rgb(172, 172, 172);
-    letter-spacing: 0.5px;
-    line-height: 26px;
-    margin-bottom: 3rem;
+.btn-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
-.btn-hero{
-    display: flex;
-    gap: 2rem;
-}
-.btn-hero .btn-agendar{
-    padding: 15px 40px;
-    border: none;
-    background-color: rgb(252, 226, 188);
-    border: 1px solid rgb(252, 226, 188);
-    border-radius: 2px;
-    transition: 0.5s;
-    cursor: pointer;
-}
-.btn-hero .btn-agendar:hover{
-    background-color: transparent;
-    color: #fff;
-}
-.btn-hero .btn-port{
+.btn-hero button {
     padding: 15px 40px;
     background-color: transparent;
-    border: 1px solid rgb(252, 226, 188);
+    border: 1px solid var(--text-color-orange);
     color: #fff;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.5s;
     position: relative;
-    z-index: 2;
+    z-index: 1;
+    overflow: hidden;
 }
-.btn-hero .btn-port::before{
+
+.btn-hero button::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgb(252, 226, 188);
-    width: 0;
-    height: 100%;
-    transition: 0.5s;
+    inset: 0;
+    background-color: var(--text-color-orange);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s ease;
     z-index: -1;
 }
-.btn-hero .btn-port:hover::before{
-    width: 100%;
-}
 
-.btn-port:hover{
-    color: #000;
+.btn-hero button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
-@media screen and (max-width: 930px){
-
-    .info-hero {
-        padding-left: 0;
-        margin: 0 auto;
-        width: 100%;
-    }
-    .info-hero h1{
-        text-align: center;
-    }
-    .info-hero .sub-topico{
-        text-align: center;
-    }
-    .info-hero .descricao{
-        text-align: center;
+@media screen and (max-width: 500px){
+    .hero{
+        background-position: left;
     }
     .btn-hero{
-        justify-content: center;
-    }
-    .btn-hero .btn-agendar, .btn-hero .btn-port{
-        padding: 15px 20px;
-    }
-    .info-hero .descricao{
-        line-height: 15px;
-    }
-}
-@media screen and (max-width: 350px){
-    .btn-hero{
+        gap: 1rem;
         flex-direction: column;
-        margin: 0 50px;
+        width: 200px;
     }
-}
-.secundary{
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    padding-left: 4rem;
+    .btn-hero button{
+        width: 100%;
+    }    
 }

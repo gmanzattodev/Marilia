@@ -5,85 +5,70 @@ menu.addEventListener("click", () => {
     nav.classList.toggle("nav");
 });
 
-const texto = document.querySelectorAll(".texto")
-const descricao = document.querySelector(".descricao")
-const text = new SplitText(texto, {
-    types: "chars"
+gsap.registerPlugin(ScrollTrigger)
+
+const navegacao = document.querySelectorAll("#nav > li")
+
+gsap.from(".logo-header", {
+    opacity: 0,
+    duration: 2
 })
-const desc = new SplitText(descricao, {
-    types: "chars"
-})
-
-
-const tl = gsap.timeline();
-
-tl.from(".sub-topico", {
+gsap.from(navegacao, {
     opacity: 0,
-    y: 50,
-    duration: 1
-}, 0)
-.from(text.chars, {
-    opacity: 0,
-    stagger: 0.02,
-    duration: 0.5,
-    y: 50
-}, 0)
-.from(desc.chars, {
-    opacity: 0,
-    y: 10,
-    duration: 0.2,
-    stagger: 0.02
-}, 0)
-.fromTo(".btn-hero", {
-    opacity: 0,
-    y: 100
-}, {
-    duration: 1,
-    opacity: 1,
-    y: 0,
-    ease: "back.out"
-}, 0)
-
-const header = document.querySelectorAll("#nav > li")
-
-gsap.from(header, {
-    stagger: 0.2,
-    duration: 1,
-    opacity: 1,
-    y: -100
-})
-const hero = document.querySelector(".info-hero")
-const site = document.querySelector(".site")
-const time = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "+=2000",
-        scrub: true,
-        pin: true
-    }
-})
-
-time.to(hero, {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    ease: "none",
-    pointerEvents: "none",
-}, 0)
-.to(".secundary", {
-    opacity: 1,
     duration: 1,
     y: -100,
-    ease: "none",
-    pointerEvents: "auto",
-    visibility: "visible"
-}, 1.5)
-.from(site, {
-    y: 7200,
-    duration: 6,
-    ease: "power2.out"
-}, 2)
+    stagger: 0.2
+})
+
+const subtitulo = new SplitText(".subtitulo", {
+    types: "chars"
+})
+const titulo = new SplitText(".titulo", {
+    types: "chars"
+})
+const descricao = new SplitText(".descricao", {
+    types: "chars"
+})
 
 
+const tl = gsap.timeline()
+tl.from(subtitulo.chars, {
+    opacity: 0,
+    duration: 1,
+    ease: "back.out",
+    y: 50,
+    stagger: 0.02
+}, 0)
+.from(titulo.chars, {
+    opacity: 0,
+    y: 30,
+    stagger: 0.02,
+    duration: 1
+}, 0.5)
+.from(descricao.chars, {
+    opacity: 0,
+    stagger: 0.01,
+    duration: 1,
+    y: 10
+}, 0.7)
 
+const btn_hero = document.querySelectorAll(".btn-hero button")
+
+gsap.from(btn_hero, {
+    opacity: 0,
+    stagger: 0.2,
+    duration: 2,
+    y: 20
+})
+
+
+const header = document.querySelector(".header")
+window.addEventListener("scroll", () => {
+    const y = scrollY
+
+    if(y >= 100){
+        header.classList.add("block")
+    } else {
+        header.classList.remove("block")
+    }
+})
