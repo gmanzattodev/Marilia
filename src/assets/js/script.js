@@ -72,3 +72,28 @@ window.addEventListener("scroll", () => {
         header.classList.remove("block")
     }
 })
+
+const buttons = document.querySelectorAll(".card");
+const secoes = document.querySelectorAll(".secao");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const nomeDaSecao = button.dataset.section;
+
+        buttons.forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        secoes.forEach((secao) => {
+            secao.classList.remove("ativa");
+        });
+
+        button.classList.add("active");
+
+        const secaoSelecionada = document.getElementById(nomeDaSecao);
+
+        if (secaoSelecionada) {
+            secaoSelecionada.classList.add("ativa");
+        }
+    });
+});
