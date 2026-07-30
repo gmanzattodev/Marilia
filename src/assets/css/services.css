@@ -12,11 +12,12 @@
 .paginas {
   background-color: rgb(255, 255, 255);
   width: 80%;
-  height: 80vh;
+  min-height: 80vh;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgb(41, 41, 41);
   overflow: hidden;
   position: relative;
+  transition: 0.5s;
 }
 .header-link {
   height: 7rem;
@@ -169,3 +170,12 @@
     display: block;
   }
 }
+@media screen and (max-width: 800px) {
+    .paginas{
+        width: 100%;
+        transition: 0.5s;
+    }
+}
+
+/* organizacao de pagina */
+

@@ -6,7 +6,7 @@
 @import "./header.css";
 @import "./about.css";
 @import "./services.css";
-
+@import "./services/acompanhamento.css";
 
 
 * {
