@@ -26,7 +26,7 @@ Dessa forma, consigo comparar os dois trabalhos e acompanhar claramente minha ev
 
 - Apresentação dos serviços fotográficos.
 - Portfólio para exibição dos trabalhos.
-- Navegação com GSAP e intuitiva.
+- Navegação intuitiva e animações com GSAP.
 - Seções organizadas e adaptáveis.
 - Área de contato.
 - Layout responsivo para desktop, tablet e celular.
@@ -51,28 +51,24 @@ O layout está sendo desenvolvido utilizando:
 
 ## 🌐 Demonstração
 
-🔗 [Acessar o site](COLOQUE-O-LINK-DO-SITE-AQUI)
+O projeto está em desenvolvimento. O link da demonstração será adicionado após a publicação.
 
 ## 🖼️ Prévia do projeto
 
-Adicione uma imagem na pasta `assets` e utilize:
-
-```markdown
-![Prévia do projeto](./assets/preview.png)
-```
+Capturas de tela serão adicionadas conforme a interface evoluir.
 
 ## 💻 Como executar
 
 Clone o repositório:
 
 ```bash
-git clone COLOQUE-A-URL-DO-REPOSITORIO
+git clone https://github.com/gmanzattodev/Marilia.git
 ```
 
 Entre na pasta do projeto:
 
 ```bash
-cd NOME-DO-PROJETO
+cd Marilia
 ```
 
 Depois, abra o arquivo `index.html` no navegador.
